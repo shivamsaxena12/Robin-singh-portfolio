@@ -1,6 +1,260 @@
-// styles.scss
-.testing {
-  width: percentage(5/7);
-  background-color: green;
-  height: 100px;
+@import "./variables/variables";
+@import "./variables/fonts";
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.color-primary {
+  color: $primary-color;
+}
+
+.container {
+  padding: 0 18%;
+}
+
+// Buttons
+.fill-btn {
+  background-color: $primary-color;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 48px;
+  cursor: pointer;
+
+  &-text {
+    color: #fff;
+    font-size: 20px;
+    font-family: "Nunito Light", "Open Sans";
+  }
+}
+
+.outline-btn {
+  border: 2px solid $primary-color;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 48px;
+  cursor: pointer;
+
+  &-text {
+    color: $primary-color;
+    font-size: 20px;
+    font-family: "Nunito Light", "Open Sans";
+  }
+}
+
+// HEADER
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 0;
+
+  &-name {
+    font-family: "Gotham Medium", "Open Sans";
+    font-size: 24px;
+    margin-top: 30px;
+    margin-left: -2px;
+  }
+
+  &-nav {
+    position: relative;
+    width: 300px;
+  }
+
+  &-nav-item {
+    background: #fff;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: $width; //dynamic width
+    text-align: center;
+
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+
+    &.is-active a {
+      color: $indicator-color;
+    }
+
+    a {
+      color: $text-color;
+      display: block;
+      padding-top: 20px;
+      padding-bottom: 8px;
+      text-decoration: none;
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px;
+
+      &:hover {
+        color: $indicator-color;
+      }
+    }
+  }
+
+  &-nav-item:last-child {
+    // make sure the last-child talks to itself
+    &:hover,
+    &.is-active {
+      &:before {
+        // we have to use important because the sibling selctor is more specific.
+        left: (100%-$width)+ ($width/2) !important;
+      }
+      &:after {
+        left: 100%-$width !important;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      pointer-events: none;
+      transition: left #{$transition-speed} ease;
+    }
+    // Making the top CSS Triangle
+    &:before {
+      border: 6px solid transparent;
+      width: 0;
+      height: 0;
+      top: 0;
+      left: ($width/2);
+      margin-left: -3px;
+    }
+    &:after {
+      border-bottom: 2px solid $indicator-color;
+      top: -6px;
+      bottom: -6px;
+      left: 0;
+      width: $width;
+      z-index: -1;
+    }
+  }
+
+  @for $i from 1 through $menu-items-loop-offset {
+    // when the Nav item "is active", make the indicator line up with the navigation item.
+    .header-nav-item:nth-child(#{$i}).is-active
+      ~ .header-nav-item:last-child:after {
+      left: ($width * $i)-$width;
+    }
+    .header-nav-item:nth-child(#{$i}).is-active
+      ~ .header-nav-item:last-child:before {
+      left: ($width * $i)+
+        ($width/2)-$width; // this ensures the triangle lines up to the menu.
+    }
+
+    .header-nav-item:nth-child(#{$i}):hover
+      ~ .header-nav-item:last-child:after {
+      left: ($width * $i)-$width !important;
+    }
+
+    .header-nav-item:nth-child(#{$i}):hover
+      ~ .header-nav-item:last-child:before {
+      left: ($width * $i)+ ($width/2)-$width !important;
+    }
+  }
+}
+
+// SECTION
+.section1 {
+  margin-top: 70px;
+  position: relative;
+
+  &-top-block {
+    display: flex;
+
+    > div {
+      flex: 1;
+      align-items: center;
+    }
+  }
+
+  &-hero {
+    object-fit: contain;
+    width: 455px;
+    height: 300px;
+    margin: auto;
+    display: block;
+  }
+
+  &-hello {
+    position: relative;
+    padding-top: 72px;
+    font-family: "Gobold Regular", "Open Sans";
+    font-size: 19px;
+    color: #1c1c1c;
+
+    &-img {
+      object-fit: contain;
+      max-width: 250px;
+      height: 131px;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  &-bio {
+    margin-top: 20px;
+    line-height: 44px;
+    letter-spacing: 0.7px;
+    font-family: "Gotham Medium", "Open Sans";
+    font-size: 28px;
+  }
+
+  &-oval {
+    position: absolute;
+    bottom: 90px;
+    left: 8.6%;
+    width: 54%;
+    background-color: $blue-light;
+    border-radius: 50%;
+    padding: 12px 9%;
+    border: 8px solid #fff;
+
+    &-text {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px;
+
+      .color-primary {
+        font-family: "Nunito SemiBold", "Open Sans";
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+
+    .fill-btn {
+      margin-right: 20px;
+    }
+  }
 }

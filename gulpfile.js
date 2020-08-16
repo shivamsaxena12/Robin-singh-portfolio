@@ -91,6 +91,7 @@ task("watch", function () {
 task("browserSync", function (done) {
   // Watching HTML
   browserSync.init({
+    watch: true,
     server: {
       baseDir: "src",
     },

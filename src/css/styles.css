@@ -1,4 +1,208 @@
-.testing {
-  width: 71.42857%;
-  background-color: green;
-  height: 100px; }
+@font-face {
+  font-family: "Nunito Light";
+  src: url("../../fonts/nunito/Nunito-Light.ttf"); }
+
+@font-face {
+  font-family: "Nunito Regular";
+  src: url("../../fonts/nunito/Nunito-Regular.ttf"); }
+
+@font-face {
+  font-family: "Nunito SemiBold";
+  src: url("../../fonts/nunito/Nunito-SemiBold.ttf"); }
+
+@font-face {
+  font-family: "Gotham Medium";
+  src: url("../../fonts/gotham/GothamMedium.ttf"); }
+
+@font-face {
+  font-family: "Gobold Regular";
+  src: url("../../fonts/gobold//GoboldBold.ttf"); }
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: white; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0; }
+
+p {
+  margin: 0; }
+
+.color-primary {
+  color: #7710de; }
+
+.container {
+  padding: 0 18%; }
+
+.fill-btn {
+  background-color: #7710de;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 48px;
+  cursor: pointer; }
+  .fill-btn-text {
+    color: #fff;
+    font-size: 20px;
+    font-family: "Nunito Light", "Open Sans"; }
+
+.outline-btn {
+  border: 2px solid #7710de;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 48px;
+  cursor: pointer; }
+  .outline-btn-text {
+    color: #7710de;
+    font-size: 20px;
+    font-family: "Nunito Light", "Open Sans"; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 0; }
+  .header-name {
+    font-family: "Gotham Medium", "Open Sans";
+    font-size: 24px;
+    margin-top: 30px;
+    margin-left: -2px; }
+  .header-nav {
+    position: relative;
+    width: 300px; }
+  .header-nav-item {
+    background: #fff;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 33.33333%;
+    text-align: center; }
+    .header-nav-item:first-child {
+      border-radius: 3px 0 0 3px; }
+    .header-nav-item:last-child {
+      border-radius: 0 3px 3px 0; }
+    .header-nav-item.is-active a {
+      color: #7710de; }
+    .header-nav-item a {
+      color: #111010;
+      display: block;
+      padding-top: 20px;
+      padding-bottom: 8px;
+      text-decoration: none;
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px; }
+      .header-nav-item a:hover {
+        color: #7710de; }
+  .header-nav-item:last-child:hover:before, .header-nav-item:last-child.is-active:before {
+    left: 83.33333% !important; }
+  .header-nav-item:last-child:hover:after, .header-nav-item:last-child.is-active:after {
+    left: 66.66667% !important; }
+  .header-nav-item:last-child:before, .header-nav-item:last-child:after {
+    content: "";
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    transition: left 0.6s ease; }
+  .header-nav-item:last-child:before {
+    border: 6px solid transparent;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 16.66667%;
+    margin-left: -3px; }
+  .header-nav-item:last-child:after {
+    border-bottom: 2px solid #7710de;
+    top: -6px;
+    bottom: -6px;
+    left: 0;
+    width: 33.33333%;
+    z-index: -1; }
+  .header .header-nav-item:nth-child(1).is-active
+~ .header-nav-item:last-child:after {
+    left: 0%; }
+  .header .header-nav-item:nth-child(1).is-active
+~ .header-nav-item:last-child:before {
+    left: 16.66667%; }
+  .header .header-nav-item:nth-child(1):hover
+~ .header-nav-item:last-child:after {
+    left: 0% !important; }
+  .header .header-nav-item:nth-child(1):hover
+~ .header-nav-item:last-child:before {
+    left: 16.66667% !important; }
+  .header .header-nav-item:nth-child(2).is-active
+~ .header-nav-item:last-child:after {
+    left: 33.33333%; }
+  .header .header-nav-item:nth-child(2).is-active
+~ .header-nav-item:last-child:before {
+    left: 50%; }
+  .header .header-nav-item:nth-child(2):hover
+~ .header-nav-item:last-child:after {
+    left: 33.33333% !important; }
+  .header .header-nav-item:nth-child(2):hover
+~ .header-nav-item:last-child:before {
+    left: 50% !important; }
+
+.section1 {
+  margin-top: 70px;
+  position: relative; }
+  .section1-top-block {
+    display: flex; }
+    .section1-top-block > div {
+      flex: 1;
+      align-items: center; }
+  .section1-hero {
+    object-fit: contain;
+    width: 455px;
+    height: 300px;
+    margin: auto;
+    display: block; }
+  .section1-hello {
+    position: relative;
+    padding-top: 72px;
+    font-family: "Gobold Regular", "Open Sans";
+    font-size: 19px;
+    color: #1c1c1c; }
+    .section1-hello-img {
+      object-fit: contain;
+      max-width: 250px;
+      height: 131px;
+      position: absolute;
+      top: 0;
+      z-index: -1; }
+  .section1-bio {
+    margin-top: 20px;
+    line-height: 44px;
+    letter-spacing: 0.7px;
+    font-family: "Gotham Medium", "Open Sans";
+    font-size: 28px; }
+  .section1-oval {
+    position: absolute;
+    bottom: 90px;
+    left: 8.6%;
+    width: 54%;
+    background-color: #e9f5fa;
+    border-radius: 50%;
+    padding: 12px 9%;
+    border: 8px solid #fff; }
+    .section1-oval-text {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px; }
+      .section1-oval-text .color-primary {
+        font-family: "Nunito SemiBold", "Open Sans"; }
+  .section1-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 60px; }
+    .section1-footer .fill-btn {
+      margin-right: 20px; }

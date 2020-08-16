@@ -1,0 +1,21 @@
+// Menu Item Variables
+// The number of items in the menu
+$menu-items: 3;
+// We multiply it by 1% to get the correct % unit
+$width: (100 / $menu-items) * 1%;
+
+// Transition Speed
+$transition-speed: 0.6s;
+$menu-items-loop-offset: $menu-items - 1; // the number of items in the menu
+
+// Colors
+
+// Theme
+$primary-color: #7710de;
+$blue-light: #e9f5fa;
+
+//Text
+$text-color: #111010;
+
+// Extra
+$indicator-color: $primary-color;
