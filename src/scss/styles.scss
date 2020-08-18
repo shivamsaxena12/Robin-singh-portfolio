@@ -1,5 +1,5 @@
 @import "./variables/variables";
-@import "./variables/fonts";
+@import "./fonts";
 
 body {
   margin: 0 !important;
@@ -323,49 +323,37 @@ p {
     }
   }
 
-  &-bio {
-    padding: 40px 0;
-    font-family: "Nunito Regular", "Open Sans";
-    font-size: 24px;
+  &-flex {
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 24px;
   }
 
   &-img {
+    flex: 1.1;
     background-color: $blue-light;
-    padding: 40px;
+    padding: 32px;
     border-radius: 8px;
-    margin-left: -4%;
-    margin-right: -4%;
+    margin-left: 40px;
+    align-self: flex-start;
 
     img {
-      max-width: 871px;
-      max-height: 245px;
       width: 100%;
       object-fit: contain;
-      margin: auto;
       display: block;
     }
+  }
+
+  &-bio {
+    padding: 20px 0;
+    font-family: "Nunito Light", "Open Sans";
+    font-size: 24px;
+    flex: 1;
   }
 }
 
 // SECTION 4
 .section4 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 70px 0;
-  padding: 32px 0;
-  background-color: $gray1;
-  color: $text-color2;
-  font-family: "Nunito Light", "Open Sans";
-
-  p:first-child {
-    margin-bottom: 4px;
-    letter-spacing: 0.3px;
-  }
-}
-
-// SECTION 5
-.section5 {
   margin: 70px 0;
 
   &-top-block {
@@ -446,14 +434,32 @@ p {
     flex-direction: row-reverse;
     text-align: left;
 
-    .section5-content-img {
+    .section4-content-img {
       margin-right: unset;
       margin-left: 36px;
     }
 
-    .section5-content-bio {
+    .section4-content-bio {
       padding-right: 24px;
       padding-left: unset;
     }
+  }
+}
+
+
+// Famous Quote
+.famous-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0;
+  padding: 40px 0 28px 0;
+  background-color: $gray1;
+  color: $text-color2;
+  font-family: "Nunito Light", "Open Sans";
+
+  p:first-child {
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
   }
 }
