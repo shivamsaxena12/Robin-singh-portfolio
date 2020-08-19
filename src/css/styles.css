@@ -1,4 +1,8 @@
 @font-face {
+  font-family: "Nunito Extra Light";
+  src: url("./../fonts/nunito/Nunito-ExtraLight.ttf"); }
+
+@font-face {
   font-family: "Nunito Light";
   src: url("./../fonts/nunito/Nunito-Light.ttf"); }
 
@@ -20,7 +24,11 @@
 
 @font-face {
   font-family: "Gobold Regular";
-  src: url("../fonts/gobold//GoboldBold.ttf"); }
+  src: url("../fonts/gobold/GoboldThin.ttf"); }
+
+@font-face {
+  font-family: "Gobold Bold";
+  src: url("../fonts/gobold/GoboldBold.ttf"); }
 
 body {
   margin: 0 !important;
@@ -37,8 +45,11 @@ h5 {
 p {
   margin: 0; }
 
+a {
+  text-decoration: none !important; }
+
 .color-primary {
-  color: #684aee; }
+  color: #684aee !important; }
 
 .text-right {
   text-align: right; }
@@ -307,18 +318,20 @@ p {
     margin-top: 60px;
     margin-bottom: 100px; }
     .section4-content-title {
-      font-family: "Nunito Bold", "Open Sans";
-      font-size: 16px;
-      line-height: 28px; }
+      font-family: "Gobold Regular", "Open Sans";
+      font-size: 44px;
+      line-height: 62px; }
     .section4-content-caption {
-      font-family: "Nunito Regular", "Open Sans";
-      font-size: 16px;
-      line-height: 28px; }
+      font-family: "Gobold Regular", "Open Sans";
+      font-size: 18px;
+      line-height: 40px;
+      color: #777777; }
     .section4-content-bio {
-      font-family: "Nunito Regular", "Open Sans";
-      font-size: 12px;
-      line-height: 17px;
-      margin-top: 8px;
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 16px;
+      margin-bottom: 8px;
       padding-left: 16px; }
     .section4-content .read-more {
       margin-top: auto;
@@ -342,6 +355,14 @@ p {
     .section4-content.reverse .section4-content-bio {
       padding-right: 24px;
       padding-left: unset; }
+  .section4-footer {
+    text-align: center;
+    font-family: "Nunito Light", "Open Sans";
+    font-size: 20px; }
+    .section4-footer .underline-border {
+      border-bottom: 1px solid #684aee;
+      height: 22px;
+      display: inline-block; }
 
 .famous-quote {
   display: flex;
@@ -351,7 +372,153 @@ p {
   padding: 40px 0 28px 0;
   background-color: #f5f5f6;
   color: #5A5A5A;
-  font-family: "Nunito Light", "Open Sans"; }
+  font-size: 21px;
+  font-family: "Nunito Extra Light", "Open Sans"; }
   .famous-quote p:first-child {
     margin-bottom: 4px;
     letter-spacing: 0.3px; }
+
+.youtube {
+  margin: 70px 0; }
+  .youtube-top-block {
+    display: flex;
+    position: relative; }
+    .youtube-top-block-title {
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      font-family: "Gobold Regular", "Open Sans";
+      font-size: 32px;
+      letter-spacing: 0.2px;
+      color: #1c1c1c;
+      z-index: 1; }
+    .youtube-top-block-title-big {
+      font-family: "Gobold Regular", "Open Sans";
+      font-size: 90px;
+      line-height: 99px;
+      color: #f4f4f4; }
+  .youtube-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden;
+    text-align: right;
+    margin-top: 60px;
+    margin-bottom: 100px; }
+    .youtube-content-title {
+      font-family: "Nunito SemiBold", "Open Sans";
+      font-size: 16px;
+      line-height: 28px; }
+    .youtube-content-bio {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px;
+      line-height: 17px;
+      margin-top: 4px;
+      padding-left: 16px; }
+    .youtube-content .visit-channel {
+      margin-top: auto;
+      margin-bottom: 4px;
+      background-color: #684aee;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 53px;
+      cursor: pointer; }
+      .youtube-content .visit-channel-text {
+        color: #ffffff;
+        font-size: 20px;
+        font-family: "Nunito SemiBold", "Open Sans";
+        margin-right: 10px; }
+  .youtube-content-img {
+    border-radius: 8px;
+    margin-right: 36px;
+    max-width: 610px;
+    flex: 3; }
+    .youtube-content-img img {
+      width: 100%;
+      object-fit: contain; }
+  .youtube-content-texts {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+
+.instagram {
+  margin: 70px 0; }
+  .instagram-top-block {
+    display: flex;
+    position: relative;
+    margin-bottom: 50px; }
+    .instagram-top-block-title {
+      position: absolute;
+      bottom: 0;
+      left: 4px;
+      font-family: "Gobold Regular", "Open Sans";
+      font-size: 32px;
+      letter-spacing: 0.2px;
+      color: #1c1c1c;
+      z-index: 1; }
+    .instagram-top-block-title-big {
+      font-family: "Gobold Regular", "Open Sans";
+      font-size: 90px;
+      line-height: 99px;
+      color: #f4f4f4; }
+  .instagram .carousel-wrapper {
+    position: relative; }
+    .instagram .carousel-wrapper .controls-prev-icon,
+    .instagram .carousel-wrapper .controls-next-icon {
+      background: transparent;
+      border: 0;
+      outline: none;
+      position: absolute; }
+      .instagram .carousel-wrapper .controls-prev-icon.inactive,
+      .instagram .carousel-wrapper .controls-next-icon.inactive {
+        opacity: 0.7; }
+    .instagram .carousel-wrapper .controls-prev-icon {
+      left: -40px; }
+    .instagram .carousel-wrapper .controls-next-icon {
+      right: -40px; }
+  .instagram .carousel-container {
+    width: 100%;
+    height: 332px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; }
+  .instagram .carousel {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease; }
+    .instagram .carousel-card {
+      min-width: calc(33.3% - 16px);
+      margin-right: 24px;
+      display: inline-block; }
+      .instagram .carousel-card-img {
+        width: 100%;
+        border-radius: 4px; }
+
+.footer {
+  margin-bottom: 100px; }
+  .footer-title {
+    font-family: "Gobold Regular", "Open Sans";
+    font-size: 35px;
+    line-height: 60px;
+    letter-spacing: 1.2px;
+    font-weight: 400; }
+  .footer-contact {
+    display: flex;
+    margin-top: 70px;
+    justify-content: space-between; }
+    .footer-contact-title {
+      font-family: "Gobold Regular", "Open Sans";
+      font-size: 16px;
+      color: #1c1c1c;
+      margin-bottom: 24px; }
+    .footer-contact-text {
+      font-size: 15px;
+      font-family: "Nunito Light", "Open Sans";
+      color: #5A5A5A; }

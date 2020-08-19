@@ -1,5 +1,10 @@
 // Nunito
 @font-face {
+  font-family: "Nunito Extra Light";
+  src: url("./../fonts/nunito/Nunito-ExtraLight.ttf");
+}
+
+@font-face {
   font-family: "Nunito Light";
   src: url("./../fonts/nunito/Nunito-Light.ttf");
 }
@@ -27,5 +32,10 @@
 
 @font-face {
   font-family: "Gobold Regular";
-  src: url("../fonts/gobold//GoboldBold.ttf");
+  src: url("../fonts/gobold/GoboldThin.ttf");
+}
+
+@font-face {
+  font-family: "Gobold Bold";
+  src: url("../fonts/gobold/GoboldBold.ttf");
 }
