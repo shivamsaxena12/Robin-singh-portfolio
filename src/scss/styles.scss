@@ -1,5 +1,6 @@
 @import "./variables/variables";
 @import "./fonts";
+@import "./mixins";
 
 body {
   margin: 0 !important;
@@ -35,6 +36,14 @@ a {
   padding: 0 18%;
 }
 
+.hover-translateY-transition:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale-transition:hover {
+  transform: scale(1.2);
+}
+
 // Buttons
 .fill-btn {
   background-color: $primary-color;
@@ -45,6 +54,7 @@ a {
   width: 140px;
   height: 48px;
   cursor: pointer;
+  @include transition(all 0.25s);
 
   &-text {
     color: #fff;
@@ -62,6 +72,7 @@ a {
   width: 140px;
   height: 48px;
   cursor: pointer;
+  @include transition(all 0.3s);
 
   &-text {
     color: $primary-color;
@@ -78,6 +89,11 @@ a {
   justify-content: center;
   height: 25px;
   cursor: pointer;
+  @include transition(all 0.3s);
+
+  &:hover {
+    background-color: $primary-color-light;
+  }
 
   &-text {
     color: #ffffff;
@@ -225,6 +241,7 @@ a {
     height: 300px;
     margin: auto;
     display: block;
+    margin-top: 50px;
   }
 
   &-hello {
@@ -244,17 +261,24 @@ a {
     }
   }
 
-  &-bio {
+  &-caption {
     margin-top: 20px;
     line-height: 44px;
     letter-spacing: 0.7px;
     font-family: "Gotham Medium", "Open Sans";
-    font-size: 28px;
+    font-size: 34px;
+  }
+
+  &-bio {
+    margin-bottom: 8px;
+    letter-spacing: 0.7px;
+    font-family: "Nunito Extra Light", "Open Sans";
+    font-size: 20px;
   }
 
   &-oval {
     position: absolute;
-    bottom: 90px;
+    bottom: 80px;
     left: 8.6%;
     width: 54%;
     background-color: $blue-light;
@@ -263,12 +287,8 @@ a {
     border: 8px solid #fff;
 
     &-text {
-      font-family: "Nunito Light", "Open Sans";
+      font-family: "Nunito Extra Light", "Open Sans";
       font-size: 16px;
-
-      .color-primary {
-        font-family: "Nunito SemiBold", "Open Sans";
-      }
     }
   }
 
@@ -391,6 +411,7 @@ a {
     text-align: right;
     margin-top: 60px;
     margin-bottom: 100px;
+    overflow: visible; // For image scale transition
 
     &-title {
       font-family: "Gobold Regular", "Open Sans";
@@ -424,6 +445,11 @@ a {
     border-radius: 8px;
     margin-right: 36px;
     max-width: 600px;
+    @include transition(all 0.25s);
+
+    &:hover {
+      transform: scale(1.02);
+    }
 
     img {
       width: 100%;
@@ -455,7 +481,7 @@ a {
     font-family: "Nunito Light", "Open Sans";
     font-size: 20px;
 
-    .underline-border{
+    .underline-border {
       border-bottom: 1px solid $primary-color;
       height: 22px;
       display: inline-block;
@@ -509,6 +535,7 @@ a {
   }
 
   &-content {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -541,6 +568,7 @@ a {
       justify-content: center;
       height: 53px;
       cursor: pointer;
+      @include transition(all 0.25s);
 
       &-text {
         color: #ffffff;
@@ -551,14 +579,52 @@ a {
     }
   }
 
+  .youtube-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .youtube-circle {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 119px;
+      height: 119px;
+      border-radius: 119px;
+      background-color: rgba(0, 0, 0, 0.2);
+      @include transition(all 0.25s);
+
+      img {
+        @include transition(all 0.25s);
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
   &-content-img {
     border-radius: 8px;
     margin-right: 36px;
     max-width: 610px;
     flex: 3;
+    align-self: flex-start;
+    position: relative;
 
-    img {
+    > img {
       width: 100%;
+      height: 100%;
       object-fit: contain;
     }
   }
@@ -607,9 +673,11 @@ a {
       border: 0;
       outline: none;
       position: absolute;
+      cursor: pointer;
 
       &.inactive {
         opacity: 0.7;
+        cursor: default;
       }
     }
 
@@ -640,15 +708,38 @@ a {
     transition: all 1s ease;
 
     &-card {
+      position: relative;
       min-width: calc(33.3% - 16px);
       margin-right: 24px;
       display: inline-block;
 
       &-img {
         width: 100%;
+        height: 100%;
         border-radius: 4px;
       }
+
+      &:hover {
+        .carousel-card-overlay {
+          opacity: 1;
+        }
+      }
     }
+  }
+
+  .carousel-card-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    @include transition(all 0.4s);
   }
 }
 
@@ -656,29 +747,61 @@ a {
   margin-bottom: 100px;
 
   &-title {
-    font-family: "Gobold Regular", "Open Sans";
-    font-size: 35px;
-    line-height: 60px;
+    font-family: "Gobold Bold", "Open Sans";
+    font-size: 48px;
+    line-height: 80px;
     letter-spacing: 1.2px;
     font-weight: 400;
   }
 
   &-contact {
     display: flex;
-    margin-top: 70px;
+    margin-top: 100px;
     justify-content: space-between;
 
     &-title {
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 16px;
+      font-family: "Gobold Bold", "Open Sans";
+      font-size: 22px;
       color: #1c1c1c;
-      margin-bottom: 24px;
+      margin-bottom: 30px;
+      letter-spacing: 1.3px;
     }
 
     &-text {
-      font-size: 15px;
+      font-size: 24px;
       font-family: "Nunito Light", "Open Sans";
       color: $text-color2;
     }
+  }
+
+  .social-icon {
+    margin-right: 8px;
+  }
+}
+
+.go-to-top {
+  background-color: $primary-color;
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  right: 66px;
+  bottom: 60px;
+  pointer-events: none;
+  opacity: 0;
+  @include transition(all 0.3s);
+
+  img {
+    margin-bottom: 2px;
+  }
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
   }
 }

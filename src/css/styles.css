@@ -57,6 +57,12 @@ a {
 .container {
   padding: 0 18%; }
 
+.hover-translateY-transition:hover {
+  transform: translateY(-4px); }
+
+.hover-scale-transition:hover {
+  transform: scale(1.2); }
+
 .fill-btn {
   background-color: #684aee;
   border-radius: 8px;
@@ -65,7 +71,12 @@ a {
   justify-content: center;
   width: 140px;
   height: 48px;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s; }
   .fill-btn-text {
     color: #fff;
     font-size: 20px;
@@ -79,7 +90,12 @@ a {
   justify-content: center;
   width: 140px;
   height: 48px;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
   .outline-btn-text {
     color: #684aee;
     font-size: 20px;
@@ -92,7 +108,14 @@ a {
   align-items: center;
   justify-content: center;
   height: 25px;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .read-more:hover {
+    background-color: #7a60f0; }
   .read-more-text {
     color: #ffffff;
     font-size: 12px;
@@ -197,7 +220,8 @@ a {
     width: 455px;
     height: 300px;
     margin: auto;
-    display: block; }
+    display: block;
+    margin-top: 50px; }
   .section1-hello {
     position: relative;
     padding-top: 72px;
@@ -211,15 +235,20 @@ a {
       position: absolute;
       top: 0;
       z-index: -1; }
-  .section1-bio {
+  .section1-caption {
     margin-top: 20px;
     line-height: 44px;
     letter-spacing: 0.7px;
     font-family: "Gotham Medium", "Open Sans";
-    font-size: 28px; }
+    font-size: 34px; }
+  .section1-bio {
+    margin-bottom: 8px;
+    letter-spacing: 0.7px;
+    font-family: "Nunito Extra Light", "Open Sans";
+    font-size: 20px; }
   .section1-oval {
     position: absolute;
-    bottom: 90px;
+    bottom: 80px;
     left: 8.6%;
     width: 54%;
     background-color: #f7f5ff;
@@ -227,10 +256,8 @@ a {
     padding: 12px 9%;
     border: 8px solid #fff; }
     .section1-oval-text {
-      font-family: "Nunito Light", "Open Sans";
+      font-family: "Nunito Extra Light", "Open Sans";
       font-size: 16px; }
-      .section1-oval-text .color-primary {
-        font-family: "Nunito SemiBold", "Open Sans"; }
   .section1-footer {
     display: flex;
     align-items: center;
@@ -316,7 +343,8 @@ a {
     overflow: hidden;
     text-align: right;
     margin-top: 60px;
-    margin-bottom: 100px; }
+    margin-bottom: 100px;
+    overflow: visible; }
     .section4-content-title {
       font-family: "Gobold Regular", "Open Sans";
       font-size: 44px;
@@ -339,7 +367,14 @@ a {
   .section4-content-img {
     border-radius: 8px;
     margin-right: 36px;
-    max-width: 600px; }
+    max-width: 600px;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s; }
+    .section4-content-img:hover {
+      transform: scale(1.02); }
     .section4-content-img img {
       width: 100%;
       object-fit: contain; }
@@ -398,6 +433,7 @@ a {
       line-height: 99px;
       color: #f4f4f4; }
   .youtube-content {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -424,19 +460,60 @@ a {
       align-items: center;
       justify-content: center;
       height: 53px;
-      cursor: pointer; }
+      cursor: pointer;
+      -webkit-transition: all 0.25s;
+      -moz-transition: all 0.25s;
+      -ms-transition: all 0.25s;
+      -o-transition: all 0.25s;
+      transition: all 0.25s; }
       .youtube-content .visit-channel-text {
         color: #ffffff;
         font-size: 20px;
         font-family: "Nunito SemiBold", "Open Sans";
         margin-right: 10px; }
+  .youtube .youtube-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .youtube .youtube-content-overlay .youtube-circle {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 119px;
+      height: 119px;
+      border-radius: 119px;
+      background-color: rgba(0, 0, 0, 0.2);
+      -webkit-transition: all 0.25s;
+      -moz-transition: all 0.25s;
+      -ms-transition: all 0.25s;
+      -o-transition: all 0.25s;
+      transition: all 0.25s; }
+      .youtube .youtube-content-overlay .youtube-circle img {
+        -webkit-transition: all 0.25s;
+        -moz-transition: all 0.25s;
+        -ms-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s; }
+      .youtube .youtube-content-overlay .youtube-circle:hover {
+        background-color: rgba(0, 0, 0, 0.1); }
+        .youtube .youtube-content-overlay .youtube-circle:hover img {
+          transform: scale(1.05); }
   .youtube-content-img {
     border-radius: 8px;
     margin-right: 36px;
     max-width: 610px;
-    flex: 3; }
-    .youtube-content-img img {
+    flex: 3;
+    align-self: flex-start;
+    position: relative; }
+    .youtube-content-img > img {
       width: 100%;
+      height: 100%;
       object-fit: contain; }
   .youtube-content-texts {
     display: flex;
@@ -470,10 +547,12 @@ a {
       background: transparent;
       border: 0;
       outline: none;
-      position: absolute; }
+      position: absolute;
+      cursor: pointer; }
       .instagram .carousel-wrapper .controls-prev-icon.inactive,
       .instagram .carousel-wrapper .controls-next-icon.inactive {
-        opacity: 0.7; }
+        opacity: 0.7;
+        cursor: default; }
     .instagram .carousel-wrapper .controls-prev-icon {
       left: -40px; }
     .instagram .carousel-wrapper .controls-next-icon {
@@ -494,31 +573,81 @@ a {
     left: 0;
     transition: all 1s ease; }
     .instagram .carousel-card {
+      position: relative;
       min-width: calc(33.3% - 16px);
       margin-right: 24px;
       display: inline-block; }
       .instagram .carousel-card-img {
         width: 100%;
+        height: 100%;
         border-radius: 4px; }
+      .instagram .carousel-card:hover .carousel-card-overlay {
+        opacity: 1; }
+  .instagram .carousel-card-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s; }
 
 .footer {
   margin-bottom: 100px; }
   .footer-title {
-    font-family: "Gobold Regular", "Open Sans";
-    font-size: 35px;
-    line-height: 60px;
+    font-family: "Gobold Bold", "Open Sans";
+    font-size: 48px;
+    line-height: 80px;
     letter-spacing: 1.2px;
     font-weight: 400; }
   .footer-contact {
     display: flex;
-    margin-top: 70px;
+    margin-top: 100px;
     justify-content: space-between; }
     .footer-contact-title {
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 16px;
+      font-family: "Gobold Bold", "Open Sans";
+      font-size: 22px;
       color: #1c1c1c;
-      margin-bottom: 24px; }
+      margin-bottom: 30px;
+      letter-spacing: 1.3px; }
     .footer-contact-text {
-      font-size: 15px;
+      font-size: 24px;
       font-family: "Nunito Light", "Open Sans";
       color: #5A5A5A; }
+  .footer .social-icon {
+    margin-right: 8px; }
+
+.go-to-top {
+  background-color: #684aee;
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  right: 66px;
+  bottom: 60px;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .go-to-top img {
+    margin-bottom: 2px; }
+  .go-to-top.active {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer; }
