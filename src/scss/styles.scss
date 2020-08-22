@@ -2,6 +2,11 @@
 @import "./fonts";
 @import "./mixins";
 
+// Tabs Styles
+@import "./home/home";
+@import "./projects/projects";
+@import "./resume/resume";
+
 body {
   margin: 0 !important;
   padding: 0 !important;
@@ -42,6 +47,15 @@ a {
 
 .hover-scale-transition:hover {
   transform: scale(1.2);
+}
+
+.line-seperator {
+  height: 1px;
+  width: 40%;
+  background-color: $primary-color;
+  margin: auto;
+  margin-bottom: 60px;
+  margin-top: 10px;
 }
 
 // Buttons
@@ -104,6 +118,8 @@ a {
 
 // HEADER
 .header {
+  z-index: 1;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,9 +135,25 @@ a {
   &-nav {
     position: relative;
     width: 300px;
+
+    &-border {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: $width;
+      @include transition(all 0.35s);
+
+      > div {
+        background-color: $primary-color;
+        border-radius: 8px;
+        height: 2px;
+        margin: 0 $width - 20%;
+      }
+    }
   }
 
   &-nav-item {
+    position: relative;
     background: #fff;
     display: block;
     float: left;
@@ -129,17 +161,17 @@ a {
     padding: 0;
     width: $width; //dynamic width
     text-align: center;
-
-    &:first-child {
-      border-radius: 3px 0 0 3px;
-    }
-
-    &:last-child {
-      border-radius: 0 3px 3px 0;
-    }
+    cursor: pointer;
 
     &.is-active a {
       color: $indicator-color;
+      font-family: "Nunito Regular", "Open Sans";
+    }
+
+    &:hover {
+      a {
+        color: $indicator-color;
+      }
     }
 
     a {
@@ -150,601 +182,15 @@ a {
       text-decoration: none;
       font-family: "Nunito Light", "Open Sans";
       font-size: 16px;
-
-      &:hover {
-        color: $indicator-color;
-      }
-    }
-  }
-
-  &-nav-item:last-child {
-    // make sure the last-child talks to itself
-    &:hover,
-    &.is-active {
-      &:before {
-        // we have to use important because the sibling selctor is more specific.
-        left: (100%-$width)+ ($width/2) !important;
-      }
-      &:after {
-        left: 100%-$width !important;
-      }
-    }
-
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
       pointer-events: none;
-      transition: left #{$transition-speed} ease;
-    }
-    // Making the top CSS Triangle
-    &:before {
-      border: 6px solid transparent;
-      width: 0;
-      height: 0;
-      top: 0;
-      left: ($width/2);
-      margin-left: -3px;
-    }
-    &:after {
-      border-bottom: 2px solid $indicator-color;
-      top: -6px;
-      bottom: -6px;
-      left: 0;
-      width: $width;
-      z-index: -1;
-    }
-  }
-
-  @for $i from 1 through $menu-items-loop-offset {
-    // when the Nav item "is active", make the indicator line up with the navigation item.
-    .header-nav-item:nth-child(#{$i}).is-active
-      ~ .header-nav-item:last-child:after {
-      left: ($width * $i)-$width;
-    }
-    .header-nav-item:nth-child(#{$i}).is-active
-      ~ .header-nav-item:last-child:before {
-      left: ($width * $i)+
-        ($width/2)-$width; // this ensures the triangle lines up to the menu.
-    }
-
-    .header-nav-item:nth-child(#{$i}):hover
-      ~ .header-nav-item:last-child:after {
-      left: ($width * $i)-$width !important;
-    }
-
-    .header-nav-item:nth-child(#{$i}):hover
-      ~ .header-nav-item:last-child:before {
-      left: ($width * $i)+ ($width/2)-$width !important;
-    }
-  }
-}
-
-// SECTION 1
-.section1 {
-  margin-top: 70px;
-  position: relative;
-
-  &-top-block {
-    display: flex;
-
-    > div {
-      flex: 1;
-      align-items: center;
-    }
-  }
-
-  &-hero {
-    object-fit: contain;
-    width: 455px;
-    height: 300px;
-    margin: auto;
-    display: block;
-    margin-top: 50px;
-  }
-
-  &-hello {
-    position: relative;
-    padding-top: 72px;
-    font-family: "Gobold Regular", "Open Sans";
-    font-size: 19px;
-    color: #1c1c1c;
-
-    &-img {
-      object-fit: contain;
-      max-width: 250px;
-      height: 131px;
-      position: absolute;
-      top: 0;
-      z-index: -1;
-    }
-  }
-
-  &-caption {
-    margin-top: 20px;
-    line-height: 44px;
-    letter-spacing: 0.7px;
-    font-family: "Gotham Medium", "Open Sans";
-    font-size: 34px;
-  }
-
-  &-bio {
-    margin-bottom: 8px;
-    letter-spacing: 0.7px;
-    font-family: "Nunito Extra Light", "Open Sans";
-    font-size: 20px;
-  }
-
-  &-oval {
-    position: absolute;
-    bottom: 80px;
-    left: 8.6%;
-    width: 54%;
-    background-color: $blue-light;
-    border-radius: 50%;
-    padding: 12px 9%;
-    border: 8px solid #fff;
-
-    &-text {
-      font-family: "Nunito Extra Light", "Open Sans";
-      font-size: 16px;
-    }
-  }
-
-  &-footer {
-    display: flex;
-    align-items: center;
-    margin-top: 60px;
-
-    .fill-btn {
-      margin-right: 20px;
-    }
-  }
-}
-
-// SECTION 2
-.section2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 70px 0;
-  padding: 32px 0;
-  background-color: $gray1;
-
-  &-img {
-    margin: 0 30px;
-    img {
-      object-fit: contain;
-    }
-  }
-}
-
-// SECTION 3
-.section3 {
-  margin-top: 70px;
-
-  &-top-block {
-    display: flex;
-    position: relative;
-
-    &-title {
-      position: absolute;
-      bottom: 0;
-      left: 9px;
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 32px;
-      letter-spacing: 0.2px;
-      color: #1c1c1c;
-      z-index: 1;
-    }
-
-    &-title-big {
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 90px;
-      line-height: 102px;
-      color: $gray2;
-    }
-  }
-
-  &-flex {
-    display: flex;
-    margin-top: 32px;
-    margin-bottom: 24px;
-  }
-
-  &-img {
-    flex: 1.1;
-    background-color: $blue-light;
-    padding: 32px;
-    border-radius: 8px;
-    margin-left: 40px;
-    align-self: flex-start;
-
-    img {
-      width: 100%;
-      object-fit: contain;
-      display: block;
-    }
-  }
-
-  &-bio {
-    padding: 20px 0;
-    font-family: "Nunito Light", "Open Sans";
-    font-size: 24px;
-    flex: 1;
-  }
-}
-
-// SECTION 4
-.section4 {
-  margin: 70px 0;
-
-  &-top-block {
-    display: flex;
-    position: relative;
-
-    &-title {
-      position: absolute;
-      bottom: 0;
-      left: 4px;
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 32px;
-      letter-spacing: 0.2px;
-      color: #1c1c1c;
-      z-index: 1;
-    }
-
-    &-title-big {
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 90px;
-      line-height: 99px;
-      color: $gray2;
-    }
-  }
-
-  &-content {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    overflow: hidden;
-    text-align: right;
-    margin-top: 60px;
-    margin-bottom: 100px;
-    overflow: visible; // For image scale transition
-
-    &-title {
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 44px;
-      line-height: 62px;
-    }
-
-    &-caption {
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 18px;
-      line-height: 40px;
-      color: $gray3;
-    }
-
-    &-bio {
-      font-family: "Nunito Light", "Open Sans";
-      font-size: 16px;
-      line-height: 24px;
-      margin-top: 16px;
-      margin-bottom: 8px;
-      padding-left: 16px;
-    }
-
-    .read-more {
-      margin-top: auto;
-      margin-bottom: 4px;
-    }
-  }
-
-  &-content-img {
-    border-radius: 8px;
-    margin-right: 36px;
-    max-width: 600px;
-    @include transition(all 0.25s);
-
-    &:hover {
-      transform: scale(1.02);
-    }
-
-    img {
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-
-  &-content-texts {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &-content.reverse {
-    flex-direction: row-reverse;
-    text-align: left;
-
-    .section4-content-img {
-      margin-right: unset;
-      margin-left: 36px;
-    }
-
-    .section4-content-bio {
-      padding-right: 24px;
-      padding-left: unset;
-    }
-  }
-  &-footer {
-    text-align: center;
-    font-family: "Nunito Light", "Open Sans";
-    font-size: 20px;
-
-    .underline-border {
-      border-bottom: 1px solid $primary-color;
-      height: 22px;
-      display: inline-block;
-    }
-  }
-}
-
-// Famous Quote
-.famous-quote {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 70px 0;
-  padding: 40px 0 28px 0;
-  background-color: $gray1;
-  color: $text-color2;
-  font-size: 21px;
-  font-family: "Nunito Extra Light", "Open Sans";
-
-  p:first-child {
-    margin-bottom: 4px;
-    letter-spacing: 0.3px;
-  }
-}
-
-// YOUTUBE SECTION
-.youtube {
-  margin: 70px 0;
-
-  &-top-block {
-    display: flex;
-    position: relative;
-
-    &-title {
-      position: absolute;
-      bottom: 0;
-      left: 16px;
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 32px;
-      letter-spacing: 0.2px;
-      color: #1c1c1c;
-      z-index: 1;
-    }
-
-    &-title-big {
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 90px;
-      line-height: 99px;
-      color: $gray2;
-    }
-  }
-
-  &-content {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    overflow: hidden;
-    text-align: right;
-    margin-top: 60px;
-    margin-bottom: 100px;
-
-    &-title {
-      font-family: "Nunito SemiBold", "Open Sans";
-      font-size: 16px;
-      line-height: 28px;
-    }
-
-    &-bio {
-      font-family: "Nunito Light", "Open Sans";
-      font-size: 16px;
-      line-height: 17px;
-      margin-top: 4px;
-      padding-left: 16px;
-    }
-
-    .visit-channel {
-      margin-top: auto;
-      margin-bottom: 4px;
-      background-color: $primary-color;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 53px;
-      cursor: pointer;
       @include transition(all 0.25s);
-
-      &-text {
-        color: #ffffff;
-        font-size: 20px;
-        font-family: "Nunito SemiBold", "Open Sans";
-        margin-right: 10px;
-      }
     }
-  }
-
-  .youtube-content-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .youtube-circle {
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 119px;
-      height: 119px;
-      border-radius: 119px;
-      background-color: rgba(0, 0, 0, 0.2);
-      @include transition(all 0.25s);
-
-      img {
-        @include transition(all 0.25s);
-      }
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-
-        img {
-          transform: scale(1.05);
-        }
-      }
-    }
-  }
-
-  &-content-img {
-    border-radius: 8px;
-    margin-right: 36px;
-    max-width: 610px;
-    flex: 3;
-    align-self: flex-start;
-    position: relative;
-
-    > img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-
-  &-content-texts {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
   }
 }
 
-// INSTAGRAM SECTION
-.instagram {
-  margin: 70px 0;
-
-  &-top-block {
-    display: flex;
-    position: relative;
-    margin-bottom: 50px;
-
-    &-title {
-      position: absolute;
-      bottom: 0;
-      left: 4px;
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 32px;
-      letter-spacing: 0.2px;
-      color: #1c1c1c;
-      z-index: 1;
-    }
-
-    &-title-big {
-      font-family: "Gobold Regular", "Open Sans";
-      font-size: 90px;
-      line-height: 99px;
-      color: $gray2;
-    }
-  }
-
-  .carousel-wrapper {
-    position: relative;
-
-    .controls-prev-icon,
-    .controls-next-icon {
-      background: transparent;
-      border: 0;
-      outline: none;
-      position: absolute;
-      cursor: pointer;
-
-      &.inactive {
-        opacity: 0.7;
-        cursor: default;
-      }
-    }
-
-    .controls-prev-icon {
-      left: -40px;
-    }
-    .controls-next-icon {
-      right: -40px;
-    }
-  }
-
-  .carousel-container {
-    width: 100%;
-    height: 332px;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-
-  .carousel {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    left: 0;
-    transition: all 1s ease;
-
-    &-card {
-      position: relative;
-      min-width: calc(33.3% - 16px);
-      margin-right: 24px;
-      display: inline-block;
-
-      &-img {
-        width: 100%;
-        height: 100%;
-        border-radius: 4px;
-      }
-
-      &:hover {
-        .carousel-card-overlay {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .carousel-card-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-    @include transition(all 0.4s);
-  }
-}
-
+// Footer
 .footer {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   &-title {
     font-family: "Gobold Bold", "Open Sans";
@@ -779,6 +225,7 @@ a {
   }
 }
 
+// Floating Button
 .go-to-top {
   background-color: $primary-color;
   width: 56px;
@@ -804,4 +251,9 @@ a {
     pointer-events: all;
     cursor: pointer;
   }
+}
+
+.tabcontent {
+  opacity: 0;
+  @include transition(all 0.7s);
 }
