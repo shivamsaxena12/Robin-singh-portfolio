@@ -1,4 +1,5 @@
-@import "./variables/variables";
+@import "./variables";
+@import "./colors";
 @import "./fonts";
 @import "./mixins";
 
@@ -7,9 +8,14 @@
 @import "./projects/projects";
 @import "./resume/resume";
 
+html {
+  overflow: auto;
+}
+
 body {
   margin: 0 !important;
   padding: 0 !important;
+  overflow-x: hidden;
   background-color: white;
 }
 
@@ -39,6 +45,10 @@ a {
 
 .container {
   padding: 0 18%;
+
+  @include mobile {
+    padding: 0 8%;
+  }
 }
 
 .hover-translateY-transition:hover {
@@ -104,6 +114,9 @@ a {
   height: 25px;
   cursor: pointer;
   @include transition(all 0.3s);
+  @include mobile {
+    padding: 0 14px;
+  }
 
   &:hover {
     background-color: $primary-color-light;
@@ -205,12 +218,22 @@ a {
     margin-top: 100px;
     justify-content: space-between;
 
+    @include mobile {
+      flex-direction: column;
+      margin-top: 12px;
+    }
+
     &-title {
       font-family: "Gobold Bold", "Open Sans";
       font-size: 22px;
       color: #1c1c1c;
       margin-bottom: 30px;
       letter-spacing: 1.3px;
+
+      @include mobile {
+        margin-bottom: 16px;
+        margin-top: 36px;
+      }
     }
 
     &-text {
@@ -222,6 +245,10 @@ a {
 
   .social-icon {
     margin-right: 8px;
+
+    @include mobile {
+      margin-right: 16px;
+    }
   }
 }
 
@@ -241,9 +268,19 @@ a {
   pointer-events: none;
   opacity: 0;
   @include transition(all 0.3s);
+  @include mobile {
+    right: 32px;
+    width: 42px;
+    height: 42px;
+  }
 
   img {
     margin-bottom: 2px;
+
+    @include mobile {
+      width: 17px;
+      height: auto;
+    }
   }
 
   &.active {

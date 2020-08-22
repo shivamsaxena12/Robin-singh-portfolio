@@ -11,3 +11,60 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+// ----------------------------------
+// Media Query Mixin
+// ----------------------------------
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktop-width-lg: 1500px;
+
+// Mobile Mixin
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+// Mobile-Tablet(P) Mixin
+@mixin mobile-tablet-p {
+  @media (max-width: #{$tablet-p-width}) {
+    @content;
+  }
+}
+
+// Tablet (L/P) Mixin
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+// Tablet & Desktop Mixin
+@mixin tablet-desktop {
+  @media (min-width: #{$tablet-p-width + 1px}) {
+    @content;
+  }
+}
+
+// Tablet (L/P) & Desktop Mixin
+@mixin tablet-desktop-full {
+  @media (min-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+// Desktop Mixin
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// Large Desktops
+@mixin desktop-lg {
+  @media (min-width: #{$desktop-width-lg}) {
+    @content;
+  }
+}
