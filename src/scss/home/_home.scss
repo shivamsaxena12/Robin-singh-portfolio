@@ -80,6 +80,7 @@
       @include mobile {
         position: static;
         margin-top: 8px;
+        width: 80%;
       }
 
       &-text {
@@ -153,6 +154,10 @@
         letter-spacing: 0.2px;
         color: #1c1c1c;
         z-index: 1;
+
+        @include mobile {
+          left: 6px;
+        }
       }
 
       &-title-big {
@@ -160,6 +165,11 @@
         font-size: 90px;
         line-height: 102px;
         color: $gray2;
+
+        @include mobile {
+          font-size: 70px;
+          line-height: 76px;
+        }
       }
     }
 
@@ -219,6 +229,10 @@
         letter-spacing: 0.2px;
         color: #1c1c1c;
         z-index: 1;
+
+        @include mobile {
+          left: 3px;
+        }
       }
 
       &-title-big {
@@ -226,6 +240,11 @@
         font-size: 90px;
         line-height: 99px;
         color: $gray2;
+
+        @include mobile {
+          font-size: 70px;
+          line-height: 76px;
+        }
       }
     }
 
@@ -538,6 +557,10 @@
         font-size: 90px;
         line-height: 99px;
         color: $gray2;
+
+        @include mobile {
+          font-size: 70px;
+        }
       }
     }
 

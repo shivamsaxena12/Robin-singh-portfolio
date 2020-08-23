@@ -7,9 +7,20 @@
     padding-bottom: 60px;
     color: white;
 
+    @include mobile {
+      flex-direction: column;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
     &-button {
       margin-left: 75px;
       @include flexBox();
+
+      @include mobile {
+        margin-left: 0;
+        margin-top: 30px;
+      }
 
       &-container {
         border: 1px solid white;
@@ -46,6 +57,9 @@
   .section2 {
     padding-top: 60px;
     padding-bottom: 60px;
+    @include mobile {
+      padding-bottom: 20px;
+    }
 
     p {
       font-family: "Nunito Extra Light", "Open Sans";
@@ -65,13 +79,24 @@
 
     &-info {
       @include flexBox(flex, flex-start, center);
+      @include mobile {
+        flex-direction: column;
+      }
 
       &-block {
         flex: 1;
+
+        @include mobile {
+          margin-bottom: 32px;
+        }
       }
 
       &-block:not(:first-child) {
         margin-left: 5%;
+
+        @include mobile {
+          margin-left: 0;
+        }
       }
     }
 
@@ -81,6 +106,10 @@
 
     .title-top-margin {
       margin-top: 70px;
+
+      @include mobile {
+        margin-top: 40px;
+      }
     }
 
     .second-title {
