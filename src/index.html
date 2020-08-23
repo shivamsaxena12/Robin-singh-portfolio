@@ -11,12 +11,27 @@
   </head>
 
   <body>
+    <div id='masterOverlay' class="master-overlay"></div>
     <!-- HEADER -->
     <div class="header container">
       <div>
         <h2 class="header-name">Robin Singh</h2>
       </div>
-      <div class="header-nav">
+      <div id="headerToggleBtn" onclick="toggleMenu()" class="header-toggle">
+        <img
+          width="32"
+          class="header-toggle-open"
+          src="./images/Icons/menu-icon.png"
+          alt="Menu Toggle"
+        />
+        <img
+          width="32"
+          class="header-toggle-close"
+          src="./images/Icons/close-icon.png"
+          alt="Menu Toggle"
+        />
+      </div>
+      <div id="headerSidebar" class="header-nav">
         <li
           id="defaultOpen"
           onclick="openPage(event,'HomeTab')"
