@@ -1,10 +1,16 @@
 function openPage(event, pageName) {
   var i, tabcontent, tablinks;
 
-  // On mobile devices clode sidebar
+  // On mobile devices close sidebar
   if (window.screen.width < 768) {
     toggleMenu();
   }
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
 
   // Moving the navbar bottom border
   document.getElementById("headerNavBorder").style.left =
@@ -54,4 +60,11 @@ function toggleMenu() {
 }
 
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+showElement(document.getElementById("HomeTab"));
+document.getElementById("masterOverlay").onclick = function () {
+  if (
+    document.getElementById("headerToggleBtn").classList.contains("is-active")
+  ) {
+    toggleMenu();
+  }
+};

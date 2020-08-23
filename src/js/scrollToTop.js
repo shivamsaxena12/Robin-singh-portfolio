@@ -5,6 +5,7 @@ window.onscroll = function () {
 
 var scrollTopBtn = document.getElementById("scrollTop");
 function scrollFunction() {
+  console.log('vvv')
   if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
     scrollTopBtn.classList.add("active");
   } else {

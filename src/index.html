@@ -11,27 +11,54 @@
   </head>
 
   <body>
-    <div id='masterOverlay' class="master-overlay"></div>
+    <div id="masterOverlay" class="master-overlay"></div>
+
+    <!-- Sidebar -->
+    <div id="headerToggleBtn" onclick="toggleMenu()" class="header-toggle">
+      <img
+        width="32"
+        class="header-toggle-open"
+        src="./images/Icons/menu-icon.png"
+        alt="Menu Toggle"
+      />
+      <img
+        width="32"
+        class="header-toggle-close"
+        src="./images/Icons/close-icon.png"
+        alt="Menu Toggle"
+      />
+    </div>
+
+    <div id="headerSidebar" class="sidebar-nav">
+      <li
+        id="defaultOpen"
+        onclick="openPage(event,'HomeTab')"
+        class="sidebar-nav-item tablink is-active"
+      >
+        <a href="#">Home</a>
+      </li>
+      <li
+        onclick="
+        // openPage(event,'ProjectsTab')
+        "
+        class="sidebar-nav-item tablink"
+      >
+        <a href="#">Projects</a>
+      </li>
+      <li
+        onclick="openPage(event, 'ResumeTab')"
+        class="sidebar-nav-item tablink"
+      >
+        <a href="#">Resume</a>
+      </li>
+    </div>
+
     <!-- HEADER -->
     <div class="header container">
       <div>
         <h2 class="header-name">Robin Singh</h2>
       </div>
-      <div id="headerToggleBtn" onclick="toggleMenu()" class="header-toggle">
-        <img
-          width="32"
-          class="header-toggle-open"
-          src="./images/Icons/menu-icon.png"
-          alt="Menu Toggle"
-        />
-        <img
-          width="32"
-          class="header-toggle-close"
-          src="./images/Icons/close-icon.png"
-          alt="Menu Toggle"
-        />
-      </div>
-      <div id="headerSidebar" class="header-nav">
+      <div class="header-nav">
         <li
           id="defaultOpen"
           onclick="openPage(event,'HomeTab')"
