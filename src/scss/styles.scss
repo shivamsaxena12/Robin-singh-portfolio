@@ -190,7 +190,7 @@ a {
   align-items: center;
   padding-top: 26px;
   padding-bottom: 26px;
-  background-color: white;
+  background-color: $primary-color;
   // box-shadow: 0px 1px 4px 2px rgba(0,0,0,0.07);
 
   &-name {
@@ -198,6 +198,7 @@ a {
     font-size: 24px;
     margin-top: 30px;
     margin-left: -2px;
+    color: white;
   }
 
   &-nav {
@@ -216,9 +217,9 @@ a {
       @include transition(all 0.35s);
 
       > div {
-        background-color: $primary-color;
+        background-color: white;
         border-radius: 8px;
-        height: 2px;
+        height: 1px;
         margin: 0 $width - 20%;
       }
     }
@@ -226,7 +227,7 @@ a {
 
   &-nav-item {
     position: relative;
-    background: #fff;
+    background: $primary-color;
     display: block;
     float: left;
     margin: 0;
@@ -236,18 +237,18 @@ a {
     cursor: pointer;
 
     &.is-active a {
-      color: $indicator-color;
+      color: #fff;
       font-family: "Nunito Regular", "Open Sans";
     }
 
     &:hover {
       a {
-        color: $indicator-color;
+        color: #fff;
       }
     }
 
     a {
-      color: $text-color;
+      color: #fff;
       display: block;
       padding-top: 20px;
       padding-bottom: 8px;
