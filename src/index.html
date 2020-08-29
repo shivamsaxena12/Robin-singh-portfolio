@@ -38,9 +38,7 @@
         <a href="#">Home</a>
       </li>
       <li
-        onclick="
-        // openPage(event,'ProjectsTab')
-        "
+        onclick="openPage(event,'ProjectsTab')"
         class="sidebar-nav-item tablink"
       >
         <a href="#">Projects</a>
@@ -60,16 +58,13 @@
       </div>
       <div class="header-nav">
         <li
-          id="defaultOpen"
           onclick="openPage(event,'HomeTab')"
           class="header-nav-item tablink is-active"
         >
           <a href="#">Home</a>
         </li>
         <li
-          onclick="
-          // openPage(event,'ProjectsTab')
-          "
+          onclick=" openPage(event,'ProjectsTab')"
           class="header-nav-item tablink"
         >
           <a href="#">Projects</a>
@@ -84,6 +79,7 @@
       </div>
     </div>
 
+    <!-- HOME WRAPPER -->
     <div id="HomeTab" class="home-wrapper tabcontent">
       <!-- SECTION 1 -->
       <div class="section1 container">
@@ -107,7 +103,7 @@
             </p>
           </div>
           <div class="section1-heo-container">
-            <div style="position: relative;">
+            <div style="position: relative">
               <img
                 class="section1-hero"
                 src="./images/home/section1.gif"
@@ -127,7 +123,7 @@
           <div class="fill-btn hover-translateY-transition">
             <p class="fill-btn-text">My work</p>
             <img
-              style="margin-left: 8px;"
+              style="margin-left: 8px"
               width="16"
               height="16"
               src="./images/Icons/down-arrow.png"
@@ -276,7 +272,7 @@
               height="12"
               viewBox="0 0 12 12"
               fill="none"
-              style="margin-left: 5px; top: 1px; position: relative;"
+              style="margin-left: 5px; top: 1px; position: relative"
             >
               <path
                 d="M1 11L11 1"
@@ -345,7 +341,7 @@
                 width="12"
                 src="./images/Icons/go-to-link-icon.png"
                 alt="Youtube"
-                style="margin-top: 1px;"
+                style="margin-top: 1px"
               />
             </a>
           </div>
@@ -474,8 +470,275 @@
       </div>
     </div>
 
-    <div id="ProjectsTab" class="projects-wrapper tabcontent"></div>
+    <!-- PROJECTS WRAPPER -->
+    <div id="ProjectsTab" class="projects-wrapper tabcontent">
+      <div class="projects-header-wrapper">
+        <div class="projects-header container">
+          <div class="projects-header-nav">
+            <li
+              id="projectsDefaultTab"
+              onclick="openProjectsPage(event,'uiuxTab')"
+              class="projects-header-nav-item projects-tablink is-active"
+            >
+              <a href="#">UI/UX</a>
+            </li>
+            <li
+              onclick="
+            openProjectsPage(event,'illustrationsTab')
+            "
+              class="projects-header-nav-item projects-tablink"
+            >
+              <a href="#">Illustrations</a>
+            </li>
+            <li
+              onclick="openProjectsPage(event, '3dModellingTab')"
+              class="projects-header-nav-item projects-tablink"
+            >
+              <a href="#">3D Modelling</a>
+            </li>
+            <li
+              onclick="openProjectsPage(event, 'videoEditingTab')"
+              class="projects-header-nav-item projects-tablink"
+            >
+              <a href="#">Video Editing</a>
+            </li>
+            <div id="projectsHeaderBorder" class="projects-header-nav-border">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="projects-listing">
+        <div id="uiuxTab" class="uiux projects-tab">
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img src="./images/projects/uiux-slide1.png" alt="slide1" />
+              </div>
+              <h3 class="slide-title">PI Control Platform</h3>
+              <p class="slide-caption">Forty Two Labs</p>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img src="./images/projects/uiux-slide2.png" alt="slide1" />
+              </div>
+              <h3 class="slide-title">Platform UX</h3>
+              <p class="slide-caption">Beejek</p>
+            </div>
+          </div>
 
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img src="./images/projects/uiux-slide3.png" alt="slide1" />
+              </div>
+              <h3 class="slide-title">Mobile Application</h3>
+              <p class="slide-caption">Fella Feeds</p>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img src="./images/projects/uiux-slide4.png" alt="slide1" />
+              </div>
+              <h3 class="slide-title">Website UI</h3>
+              <p class="slide-caption">Fella Feeds</p>
+            </div>
+          </div>
+
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img src="./images/projects/uiux-slide5.png" alt="slide1" />
+              </div>
+              <h3 class="slide-title">Share It Redesign</h3>
+              <p class="slide-caption">Personal Project</p>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img src="./images/projects/uiux-slide6.png" alt="slide1" />
+              </div>
+              <h3 class="slide-title">Rosate Dating App UI/UX</h3>
+              <p class="slide-caption">Rosate</p>
+            </div>
+          </div>
+
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img src="./images/projects/uiux-slide7.png" alt="slide1" />
+              </div>
+              <h3 class="slide-title">Corona GO Landing Page</h3>
+              <p class="slide-caption">Personal Project</p>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img src="./images/projects/uiux-slide8.png" alt="slide1" />
+              </div>
+              <h3 class="slide-title">ATG Web Landing Page</h3>
+              <p class="slide-caption">Personal Project</p>
+            </div>
+          </div>
+        </div>
+        <div id="illustrationsTab" class="illustrations projects-tab">
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/illustrations-slide1.png"
+                  alt="Charactter Illustration"
+                />
+              </div>
+              <h3 class="slide-title">Character Illustration</h3>
+              <p class="slide-caption">Digital illustration</p>
+              <div class="slide-overlay">
+                <h3 class="slide-overlay-title">DIGITAL<br />ILLUSTRATIONS</h3>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/illustrations-slide2.png"
+                  alt="Logo Design"
+                />
+              </div>
+              <h3 class="slide-title">Logo Design</h3>
+              <p class="slide-caption">Logo</p>
+              <div class="slide-overlay">
+                <h3 class="slide-overlay-title">LOGO DESIGN</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/illustrations-slide3.png"
+                  alt="Scene Visualization"
+                />
+              </div>
+              <h3 class="slide-title">Celebrating Hindi Cinema</h3>
+              <p class="slide-caption">Scene visualization</p>
+              <div class="slide-overlay">
+                <h3 class="slide-overlay-title">SCENE VISUALIZATION</h3>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/illustrations-slide4.png"
+                  alt="Minimal Illustration"
+                />
+              </div>
+              <h3 class="slide-title">Minimal Illustrations</h3>
+              <p class="slide-caption">Poster/ Postcard Design</p>
+              <div class="slide-overlay">
+                <h3 class="slide-overlay-title">MINIMAL<br />ILLUSTRATIONS</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="3dModellingTab" class="modelling projects-tab">
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/3dModelling-slide1.png"
+                  alt="Charactter Illustration"
+                />
+              </div>
+              <h3 class="slide-title">Black Hole Visualization</h3>
+              <p class="slide-caption">Black Hole Render</p>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/3dModelling-slide2.png"
+                  alt="Logo Design"
+                />
+              </div>
+              <h3 class="slide-title">Low Poly 3D Environment</h3>
+              <p class="slide-caption">Environment Design</p>
+            </div>
+          </div>
+
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/3dModelling-slide3.png"
+                  alt="Scene Visualization"
+                />
+              </div>
+              <h3 class="slide-title">Night Scene in a Modern City</h3>
+              <p class="slide-caption">City Render</p>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/3dModelling-slide4.png"
+                  alt="Minimal Illustration"
+                />
+              </div>
+              <h3 class="slide-title">Quarantunes</h3>
+              <p class="slide-caption">An Instrumental Music Album</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="videoEditingTab" class="editing projects-tab">
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/editing-slide1.png"
+                  alt="Charactter Illustration"
+                />
+              </div>
+              <h3 class="slide-title">Placement Interview</h3>
+              <p class="slide-caption">Interview Series (108k+ Subs)</p>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/editing-slide2.png"
+                  alt="Logo Design"
+                />
+              </div>
+              <h3 class="slide-title">Rosate App</h3>
+              <p class="slide-caption">Dating Platform - Ad Film</p>
+            </div>
+          </div>
+
+          <div class="slide-container">
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/editing-slide3.png"
+                  alt="Scene Visualization"
+                />
+              </div>
+              <h3 class="slide-title">Favorz Consultants LLP</h3>
+              <p class="slide-caption">Marketing Campaign Ad Film</p>
+            </div>
+            <div class="slide">
+              <div class="slide-img">
+                <img
+                  src="./images/projects/editing-slide4.png"
+                  alt="Minimal Illustration"
+                />
+              </div>
+              <h3 class="slide-title">Nucleya Sub Cinema</h3>
+              <p class="slide-caption">After Movie 2017</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="line-seperator"></div>
+    </div>
+
+    <!-- RESUME WRAPPER -->
     <div id="ResumeTab" class="resume-wrapper tabcontent">
       <div class="section1 container">
         <div>
@@ -513,9 +776,7 @@
             <p>Fella Feeds</p>
             <p class="gray-text">UI/UX Designer</p>
             <p class="gray-text">Mar 2018 - Feb 2019</p>
-            <p>
-              Worked on designing various platforms.
-            </p>
+            <p>Worked on designing various platforms.</p>
           </div>
           <div class="section2-info-block">
             <p>Book Bank</p>
@@ -572,15 +833,19 @@
       <div class="line-seperator"></div>
     </div>
     <!-- FOOTER SECTION -->
-    <div class="footer container">
-      <h3 class="footer-title">LET’S CREATE SOMETHING GREAT TOGETHER,</h3>
-      <h3 class="footer-title color-primary">SAY HELLO.</h3>
+    <div class="footer">
+      <div class="footer-title-container">
+        <h3 class="footer-title">
+          LET’S CREATE SOMETHING GREAT TOGETHER,&nbsp;
+        </h3>
+        <h3 class="footer-title color-primary">SAY HELLO.</h3>
+      </div>
       <div class="footer-contact">
         <div>
           <h4 class="footer-contact-title">BELONGS TO</h4>
           <p class="footer-contact-text">Robin Singh</p>
         </div>
-        <div>
+        <div class="footer-contact-wrapper">
           <h4 class="footer-contact-title">CONTACT</h4>
           <!-- 
             For sending the mail on Gmail
@@ -644,9 +909,11 @@
 
     <!-- Javascripts -->
     <!--build:js js/main.min.js -->
+    <script src="js/common.js"></script>
     <script src="js/headerNavbar.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/scrollToTop.js"></script>
+    <script src="js/projectsHeader.js"></script>
     <!-- endbuild -->
   </body>
 </html>

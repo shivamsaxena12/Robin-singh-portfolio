@@ -1,3 +1,6 @@
+// NOTE: showElement() and hideElement() is defined in common.js
+
+// HEADER NAVBAR FUNCTION
 function openPage(event, pageName) {
   var i, tabcontent, tablinks;
 
@@ -32,20 +35,7 @@ function openPage(event, pageName) {
   showElement(document.getElementById(pageName));
 }
 
-function showElement(element) {
-  element.style.display = "block";
-  setTimeout(function () {
-    element.style.opacity = 1;
-  }, 0);
-}
-
-function hideElement(element, hideTimer) {
-  element.style.opacity = 0;
-  setTimeout(function () {
-    element.style.display = "none";
-  }, hideTimer);
-}
-
+// SIDEBAR MENU FUNCTION
 function toggleMenu() {
   var overlayElement = document.getElementById("masterOverlay");
   var headerToggleElement = document.getElementById("headerToggleBtn");
@@ -59,8 +49,7 @@ function toggleMenu() {
   }
 }
 
-// Get the element with id="defaultOpen" and click on it
-showElement(document.getElementById("HomeTab"));
+// CLOSE SIDEBAR MENU ON OUTSIDE CLICK
 document.getElementById("masterOverlay").onclick = function () {
   if (
     document.getElementById("headerToggleBtn").classList.contains("is-active")
@@ -68,3 +57,6 @@ document.getElementById("masterOverlay").onclick = function () {
     toggleMenu();
   }
 };
+
+// INITIAL PAGE TO BE OPENED
+showElement(document.getElementById("HomeTab"));

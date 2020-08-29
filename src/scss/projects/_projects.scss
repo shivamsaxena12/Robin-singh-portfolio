@@ -1,2 +1,152 @@
 .projects-wrapper {
+  .projects-header-wrapper {
+    background-color: white;
+    margin-top: 60px;
+  }
+
+  .projects-header {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 32px;
+
+    &.container {
+      padding-right: 16%;
+      padding-left: 16%;
+    }
+
+    &-nav {
+      position: relative;
+      width: 500px;
+
+      @include mobile {
+        display: none;
+      }
+
+      &-border {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: $projects-menu-width;
+        @include transition(all 0.5s);
+
+        > div {
+          background-color: $projects-border-color;
+          border-radius: 8px;
+          height: 1px;
+          margin: 0 $projects-menu-width - 8%;
+        }
+      }
+    }
+
+    &-nav-item {
+      position: relative;
+      display: block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      width: $projects-menu-width; //dynamic width
+      text-align: center;
+      cursor: pointer;
+
+      a {
+        display: inline-block;
+        color: #fff;
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 12px;
+        text-decoration: none;
+        font-family: "Nunito Light", "Open Sans";
+        font-size: 16px;
+        pointer-events: none;
+      }
+
+      &.is-active a {
+        color: $projects-border-color;
+      }
+
+      &:hover {
+        a {
+          color: $projects-border-color;
+        }
+      }
+    }
+  }
+
+  .slide-container {
+    display: flex;
+    margin-bottom: 60px;
+
+    .slide:first-child {
+      margin-right: 28px;
+    }
+
+    .slide:last-child {
+      margin-left: 28px;
+    }
+  }
+
+  .slide {
+    margin-top: 20px;
+    flex: 1;
+    position: relative;
+
+    &-img {
+      img {
+        width: 100%;
+      }
+    }
+
+    &-title {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 24px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    &-caption {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 20px;
+      color: $gray4;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 82px;
+      background-color: rgba(0, 0, 0, 0.44);
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      @include transition(all 0.5s);
+      cursor: pointer;
+
+      &-title {
+        font-family: "Gobold Regular", "Open Sans";
+        font-size: 60px;
+        color: white;
+        margin-left: 42px;
+      }
+    }
+
+    &:hover {
+      .slide-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .projects-listing {
+    margin-top: 36px;
+    padding: 0 80px;
+  }
+
+  .line-seperator {
+    margin-top: 100px;
+    margin-bottom: 80px;
+  }
 }

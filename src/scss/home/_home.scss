@@ -167,8 +167,8 @@
         color: $gray2;
 
         @include mobile {
-          font-size: 70px;
-          line-height: 76px;
+          font-size: 60px;
+          line-height: 68px;
         }
       }
     }
@@ -400,6 +400,10 @@
         letter-spacing: 0.2px;
         color: #1c1c1c;
         z-index: 1;
+
+        @include mobile {
+          left: 10px;
+        }
       }
 
       &-title-big {
@@ -407,6 +411,11 @@
         font-size: 90px;
         line-height: 99px;
         color: $gray2;
+
+        @include mobile {
+          font-size: 70px;
+          line-height: 78px;
+        }
       }
     }
 
@@ -550,6 +559,10 @@
         letter-spacing: 0.2px;
         color: #1c1c1c;
         z-index: 1;
+
+        @include mobile {
+          left: 2px;
+        }
       }
 
       &-title-big {
@@ -560,6 +573,7 @@
 
         @include mobile {
           font-size: 70px;
+          line-height: 78px;
         }
       }
     }
