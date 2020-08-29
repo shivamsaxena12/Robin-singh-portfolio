@@ -552,6 +552,9 @@
   align-items: center;
   padding-top: 18px;
   padding-bottom: 32px; }
+  @media (max-width: 767px) {
+    .projects-wrapper .projects-header {
+      display: block; } }
   .projects-wrapper .projects-header.container {
     padding-right: 16%;
     padding-left: 16%; }
@@ -560,7 +563,7 @@
     width: 500px; }
     @media (max-width: 767px) {
       .projects-wrapper .projects-header-nav {
-        display: none; } }
+        width: unset; } }
     .projects-wrapper .projects-header-nav-border {
       position: absolute;
       left: 0;
@@ -571,6 +574,9 @@
       -ms-transition: all 0.5s;
       -o-transition: all 0.5s;
       transition: all 0.5s; }
+      @media (max-width: 767px) {
+        .projects-wrapper .projects-header-nav-border {
+          display: none; } }
       .projects-wrapper .projects-header-nav-border > div {
         background-color: #ffffff;
         border-radius: 8px;
@@ -584,17 +590,38 @@
     padding: 0;
     width: 25%;
     text-align: center;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
+    @media (max-width: 767px) {
+      .projects-wrapper .projects-header-nav-item {
+        float: unset;
+        width: 100%; }
+        .projects-wrapper .projects-header-nav-item a {
+          border: 1px solid transparent;
+          border-radius: 5px; }
+        .projects-wrapper .projects-header-nav-item.is-active a {
+          border: 1px solid white;
+          border-radius: 5px; } }
     .projects-wrapper .projects-header-nav-item a {
-      display: inline-block;
       color: #fff;
-      display: block;
+      display: inline-block;
       padding-top: 20px;
       padding-bottom: 12px;
       text-decoration: none;
       font-family: "Nunito Light", "Open Sans";
       font-size: 16px;
-      pointer-events: none; }
+      pointer-events: none;
+      padding-left: 12px;
+      padding-right: 12px; }
+      @media (max-width: 767px) {
+        .projects-wrapper .projects-header-nav-item a {
+          width: 120px;
+          padding-top: 19px;
+          padding-bottom: 18px; } }
     .projects-wrapper .projects-header-nav-item.is-active a {
       color: #ffffff; }
     .projects-wrapper .projects-header-nav-item:hover a {
@@ -603,15 +630,28 @@
 .projects-wrapper .slide-container {
   display: flex;
   margin-bottom: 60px; }
+  @media (max-width: 767px) {
+    .projects-wrapper .slide-container {
+      display: block;
+      margin-bottom: 0px; } }
   .projects-wrapper .slide-container .slide:first-child {
     margin-right: 28px; }
+    @media (max-width: 767px) {
+      .projects-wrapper .slide-container .slide:first-child {
+        margin-right: 0; } }
   .projects-wrapper .slide-container .slide:last-child {
     margin-left: 28px; }
+    @media (max-width: 767px) {
+      .projects-wrapper .slide-container .slide:last-child {
+        margin-left: 0; } }
 
 .projects-wrapper .slide {
   margin-top: 20px;
   flex: 1;
   position: relative; }
+  @media (max-width: 767px) {
+    .projects-wrapper .slide {
+      margin-top: 60px; } }
   .projects-wrapper .slide-img img {
     width: 100%; }
   .projects-wrapper .slide-title {
@@ -650,6 +690,9 @@
 .projects-wrapper .projects-listing {
   margin-top: 36px;
   padding: 0 80px; }
+  @media (max-width: 767px) {
+    .projects-wrapper .projects-listing {
+      padding: 0 40px; } }
 
 .projects-wrapper .line-seperator {
   margin-top: 100px;
@@ -1034,6 +1077,10 @@ a {
   .footer-contact-wrapper {
     margin-left: 300px;
     margin-right: 180px; }
+    @media (max-width: 767px) {
+      .footer-contact-wrapper {
+        margin-left: 0;
+        margin-right: 0; } }
   .footer-contact {
     display: flex;
     margin-top: 100px; }
@@ -1055,6 +1102,9 @@ a {
       font-size: 24px;
       font-family: "Nunito Light", "Open Sans";
       color: #5a5a5a; }
+      @media (max-width: 767px) {
+        .footer-contact-text {
+          font-size: 20px; } }
   .footer .social-icon {
     margin-right: 8px; }
     @media (max-width: 767px) {

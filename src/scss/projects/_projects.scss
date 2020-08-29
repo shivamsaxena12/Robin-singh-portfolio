@@ -12,6 +12,10 @@
     padding-top: 18px;
     padding-bottom: 32px;
 
+    @include mobile {
+      display: block;
+    }
+
     &.container {
       padding-right: 16%;
       padding-left: 16%;
@@ -22,7 +26,7 @@
       width: 500px;
 
       @include mobile {
-        display: none;
+        width: unset;
       }
 
       &-border {
@@ -31,6 +35,10 @@
         bottom: 0;
         width: $projects-menu-width;
         @include transition(all 0.5s);
+
+        @include mobile {
+          display: none;
+        }
 
         > div {
           background-color: $projects-border-color;
@@ -50,17 +58,41 @@
       width: $projects-menu-width; //dynamic width
       text-align: center;
       cursor: pointer;
+      @include transition(all 0.5s);
+
+      @include mobile {
+        float: unset;
+        width: 100%;
+        a {
+          border: 1px solid transparent;
+          border-radius: 5px;
+        }
+
+        &.is-active {
+          a {
+            border: 1px solid white;
+            border-radius: 5px;
+          }
+        }
+      }
 
       a {
-        display: inline-block;
         color: #fff;
-        display: block;
+        display: inline-block;
         padding-top: 20px;
         padding-bottom: 12px;
         text-decoration: none;
         font-family: "Nunito Light", "Open Sans";
         font-size: 16px;
         pointer-events: none;
+        padding-left: 12px;
+        padding-right: 12px;
+
+        @include mobile {
+          width: 120px;
+          padding-top: 19px;
+          padding-bottom: 18px;
+        }
       }
 
       &.is-active a {
@@ -79,12 +111,25 @@
     display: flex;
     margin-bottom: 60px;
 
+    @include mobile {
+      display: block;
+      margin-bottom: 0px;
+    }
+
     .slide:first-child {
       margin-right: 28px;
+
+      @include mobile {
+        margin-right: 0;
+      }
     }
 
     .slide:last-child {
       margin-left: 28px;
+
+      @include mobile {
+        margin-left: 0;
+      }
     }
   }
 
@@ -92,6 +137,10 @@
     margin-top: 20px;
     flex: 1;
     position: relative;
+
+    @include mobile {
+      margin-top: 60px;
+    }
 
     &-img {
       img {
@@ -143,6 +192,10 @@
   .projects-listing {
     margin-top: 36px;
     padding: 0 80px;
+
+    @include mobile {
+      padding: 0 40px;
+    }
   }
 
   .line-seperator {
