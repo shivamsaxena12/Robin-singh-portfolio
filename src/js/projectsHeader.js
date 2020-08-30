@@ -3,11 +3,14 @@
 function openProjectsPage(event, pageName) {
   var i, projectsTab, projectsTabLinks;
 
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
+  // // On desktop devices scroll to top
+  // if (window.screen.width > 768) {
+  //   window.scrollTo({
+  //     top: 0,
+  //     left: 0,
+  //     behavior: "smooth",
+  //   });
+  // }
 
   // Moving the navbar bottom border
   document.getElementById("projectsHeaderBorder").style.left =
