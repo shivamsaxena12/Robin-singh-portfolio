@@ -190,15 +190,38 @@ a {
   align-items: center;
   padding-top: 26px;
   padding-bottom: 26px;
-  background-color: $primary-color;
-  // box-shadow: 0px 1px 4px 2px rgba(0,0,0,0.07);
+  background-color: white;
+  @include transition(all 0.25s);
+
+  &.scroll-active {
+    background-color: $primary-color;
+    box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.07);
+
+    .header-name {
+      color: #ffffff;
+    }
+
+    .header-nav-border > div {
+      background-color: #ffffff;
+    }
+
+    .header-nav-item {
+      // background: $primary-color;
+
+      &.is-active a,
+      &:hover a,
+      a {
+        color: #ffffff;
+      }
+    }
+  }
 
   &-name {
     font-family: "Gotham Medium", "Open Sans";
     font-size: 24px;
     margin-top: 30px;
     margin-left: -2px;
-    color: white;
+    @include transition(all 0.35s);
   }
 
   &-nav {
@@ -217,9 +240,9 @@ a {
       @include transition(all 0.35s);
 
       > div {
-        background-color: white;
+        background-color: $primary-color;
         border-radius: 8px;
-        height: 1px;
+        height: 2px;
         margin: 0 $width - 20%;
       }
     }
@@ -227,7 +250,7 @@ a {
 
   &-nav-item {
     position: relative;
-    background: $primary-color;
+    // background-color: white;
     display: block;
     float: left;
     margin: 0;
@@ -237,18 +260,18 @@ a {
     cursor: pointer;
 
     &.is-active a {
-      color: #fff;
+      color: $primary-color;
       font-family: "Nunito Regular", "Open Sans";
     }
 
     &:hover {
       a {
-        color: #fff;
+        color: $primary-color;
       }
     }
 
     a {
-      color: #fff;
+      color: $primary-color;
       display: block;
       padding-top: 20px;
       padding-bottom: 8px;
@@ -373,10 +396,15 @@ a {
       font-size: 24px;
       font-family: "Nunito Light", "Open Sans";
       color: $text-color2;
+      @include transition(all 0.3s);
 
       @include mobile {
         font-size: 20px;
       }
+    }
+
+    .contact-link:hover {
+      color: #1c1c1c !important;
     }
   }
 

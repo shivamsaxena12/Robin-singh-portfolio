@@ -954,13 +954,33 @@ a {
   align-items: center;
   padding-top: 26px;
   padding-bottom: 26px;
-  background-color: #684aee; }
+  background-color: white;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  -ms-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s; }
+  .header.scroll-active {
+    background-color: #684aee;
+    box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.07); }
+    .header.scroll-active .header-name {
+      color: #ffffff; }
+    .header.scroll-active .header-nav-border > div {
+      background-color: #ffffff; }
+    .header.scroll-active .header-nav-item.is-active a,
+    .header.scroll-active .header-nav-item:hover a,
+    .header.scroll-active .header-nav-item a {
+      color: #ffffff; }
   .header-name {
     font-family: "Gotham Medium", "Open Sans";
     font-size: 24px;
     margin-top: 30px;
     margin-left: -2px;
-    color: white; }
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s; }
   .header-nav {
     position: relative;
     width: 300px; }
@@ -978,13 +998,12 @@ a {
       -o-transition: all 0.35s;
       transition: all 0.35s; }
       .header-nav-border > div {
-        background-color: white;
+        background-color: #684aee;
         border-radius: 8px;
-        height: 1px;
+        height: 2px;
         margin: 0 13.33333%; }
   .header-nav-item {
     position: relative;
-    background: #684aee;
     display: block;
     float: left;
     margin: 0;
@@ -993,12 +1012,12 @@ a {
     text-align: center;
     cursor: pointer; }
     .header-nav-item.is-active a {
-      color: #fff;
+      color: #684aee;
       font-family: "Nunito Regular", "Open Sans"; }
     .header-nav-item:hover a {
-      color: #fff; }
+      color: #684aee; }
     .header-nav-item a {
-      color: #fff;
+      color: #684aee;
       display: block;
       padding-top: 20px;
       padding-bottom: 8px;
@@ -1100,10 +1119,17 @@ a {
     .footer-contact-text {
       font-size: 24px;
       font-family: "Nunito Light", "Open Sans";
-      color: #5a5a5a; }
+      color: #5a5a5a;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
       @media (max-width: 767px) {
         .footer-contact-text {
           font-size: 20px; } }
+    .footer-contact .contact-link:hover {
+      color: #1c1c1c !important; }
   .footer .social-icon {
     margin-right: 8px; }
     @media (max-width: 767px) {

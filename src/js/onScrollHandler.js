@@ -4,12 +4,15 @@ window.onscroll = function () {
 };
 
 var scrollTopBtn = document.getElementById("scrollTop");
+var headerContainer = document.getElementById("headerContainer");
+
 function scrollFunction() {
-  console.log('vvv')
   if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
     scrollTopBtn.classList.add("active");
+    headerContainer.classList.add("scroll-active");
   } else {
     scrollTopBtn.classList.remove("active");
+    headerContainer.classList.remove("scroll-active");
   }
 }
 
