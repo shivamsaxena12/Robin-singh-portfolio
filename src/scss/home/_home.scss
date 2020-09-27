@@ -299,6 +299,7 @@
       border-radius: 8px;
       margin-right: 36px;
       max-width: 600px;
+      cursor: pointer;
       @include transition(all 0.25s);
 
       @include mobile {

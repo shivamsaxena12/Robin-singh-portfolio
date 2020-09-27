@@ -5,6 +5,7 @@
 
 // Tabs Styles
 @import "./home/home";
+@import "./home/caseStudy";
 @import "./projects/projects";
 @import "./resume/resume";
 
@@ -43,6 +44,10 @@ a {
   text-align: right;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .container {
   padding: 0 18%;
 
@@ -66,6 +71,24 @@ a {
   margin: auto;
   margin-bottom: 60px;
   margin-top: 10px;
+}
+
+.dark-content {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.gray-content {
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+.white-text {
+  color: #ffffff;
+}
+
+.flex1 {
+  flex: 1;
 }
 
 // Buttons

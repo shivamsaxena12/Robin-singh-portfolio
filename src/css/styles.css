@@ -248,6 +248,7 @@
     border-radius: 8px;
     margin-right: 36px;
     max-width: 600px;
+    cursor: pointer;
     -webkit-transition: all 0.25s;
     -moz-transition: all 0.25s;
     -ms-transition: all 0.25s;
@@ -539,6 +540,189 @@
     -o-transition: all 0.4s;
     transition: all 0.4s; }
 
+.case-study {
+  opacity: 0;
+  display: none;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  transition: all 0.7s;
+  padding-top: 60px; }
+  .case-study .section1-top-block {
+    display: flex;
+    position: relative; }
+    .case-study .section1-top-block-title {
+      position: absolute;
+      bottom: 0;
+      left: 9px;
+      font-family: "Gobold Bold", "Open Sans";
+      font-size: 32px;
+      letter-spacing: 0.2px;
+      color: #1c1c1c;
+      z-index: 1; }
+      @media (max-width: 767px) {
+        .case-study .section1-top-block-title {
+          left: 6px; } }
+    .case-study .section1-top-block-title-big {
+      font-family: "Gobold Bold", "Open Sans";
+      font-size: 90px;
+      line-height: 102px;
+      color: #f4f4f4; }
+      @media (max-width: 767px) {
+        .case-study .section1-top-block-title-big {
+          font-size: 60px;
+          line-height: 68px; } }
+  .case-study .section1-bio {
+    padding: 20px 0;
+    font-family: "Nunito Light", "Open Sans";
+    font-size: 20px;
+    flex: 1;
+    margin-bottom: 20px; }
+  .case-study-banner {
+    margin-left: 16%;
+    z-index: 1;
+    position: relative; }
+  .case-study .title {
+    font-family: "Nunito Light", "Open Sans";
+    font-size: 36px;
+    margin-bottom: 20px; }
+  .case-study .second-title {
+    font-family: "Nunito Light", "Open Sans";
+    font-size: 24px;
+    margin-bottom: 16px; }
+  .case-study .section2 {
+    padding: 140px 0 60px;
+    padding-left: 17%;
+    position: relative;
+    top: -126px;
+    z-index: 0;
+    background: #000000; }
+    .case-study .section2-overview {
+      display: flex;
+      align-items: flex-end; }
+      .case-study .section2-overview p {
+        font-family: "Nunito Light", "Open Sans";
+        font-size: 18px;
+        max-width: 780px;
+        color: #979797;
+        line-height: 180%;
+        margin-right: 90px; }
+  .case-study .section3 {
+    padding-left: 17%;
+    position: relative;
+    top: -66px; }
+    .case-study .section3-row {
+      display: flex;
+      justify-content: space-between; }
+      .case-study .section3-row > div {
+        flex: 1; }
+    .case-study .section3-row.margin-top {
+      margin-top: 40px; }
+    .case-study .section3-title {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 36px;
+      margin-bottom: 20px; }
+    .case-study .section3-info {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px;
+      color: #979797;
+      line-height: 180%;
+      max-width: 420px; }
+  .case-study .section4 {
+    padding-left: 17%;
+    padding-right: 12%;
+    padding-top: 70px;
+    padding-bottom: 70px; }
+    .case-study .section4-row {
+      display: flex;
+      justify-content: space-between; }
+    .case-study .section4-row.margin-top {
+      margin-top: 70px; }
+    .case-study .section4-title {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 36px;
+      margin-bottom: 20px; }
+    .case-study .section4-info {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px;
+      color: #979797;
+      line-height: 180%;
+      max-width: 770px;
+      text-align: justify; }
+    .case-study .section4 .tick-icon-container {
+      position: relative;
+      left: 20px; }
+    .case-study .section4 .down-arrow {
+      margin: 36px 28px 50px; }
+  .case-study .section5 {
+    padding-left: 17%;
+    padding-right: 12%;
+    padding-top: 70px;
+    padding-bottom: 30px; }
+    .case-study .section5-products {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 50px;
+      cursor: pointer; }
+    .case-study .section5 .mobile-product {
+      position: relative;
+      top: -6px; }
+    .case-study .section5 .click-to-magnify {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 12px;
+      text-align: center;
+      color: #444444;
+      margin-top: 50px; }
+  .case-study .section6 {
+    display: flex;
+    padding-left: 17%;
+    padding-right: 13%; }
+    .case-study .section6-image {
+      margin-right: 50px; }
+    .case-study .section6 .famous-quote {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0 0px;
+      padding: 40px 0 28px 0;
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 16px; }
+      @media (max-width: 767px) {
+        .case-study .section6 .famous-quote {
+          padding: 24px 8%; } }
+      .case-study .section6 .famous-quote p:first-child {
+        margin-bottom: 4px;
+        letter-spacing: 0.3px; }
+      .case-study .section6 .famous-quote .fade-text {
+        color: #757575;
+        font-size: 13px; }
+  .case-study .key-feature-text {
+    margin-left: 17%;
+    padding-top: 100px;
+    margin-bottom: 12px; }
+  .case-study .section7 {
+    display: flex;
+    padding-left: 17%;
+    padding-right: 13%;
+    align-items: center; }
+    .case-study .section7-info {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 18px;
+      color: #979797;
+      line-height: 180%;
+      max-width: 740px;
+      text-align: justify; }
+  .case-study .section8 {
+    padding-left: 17%;
+    padding-right: 12%;
+    margin-top: 76px; }
+    .case-study .section8-info {
+      font-family: "Nunito Light", "Open Sans";
+      font-size: 18px;
+      max-width: 740px; }
+
 .projects-wrapper .projects-header-wrapper {
   background-color: white;
   margin-top: 50px; }
@@ -817,6 +1001,9 @@ a {
 .text-right {
   text-align: right; }
 
+.text-center {
+  text-align: center; }
+
 .container {
   padding: 0 18%; }
   @media (max-width: 767px) {
@@ -836,6 +1023,20 @@ a {
   margin: auto;
   margin-bottom: 60px;
   margin-top: 10px; }
+
+.dark-content {
+  background-color: #000000;
+  color: #ffffff; }
+
+.gray-content {
+  background-color: #0d0d0d;
+  color: #ffffff; }
+
+.white-text {
+  color: #ffffff; }
+
+.flex1 {
+  flex: 1; }
 
 .fill-btn {
   background-color: #684aee;

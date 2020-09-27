@@ -9,6 +9,21 @@ function openPage(event, pageName) {
     toggleMenu();
   }
 
+  // Hide all case studies and display home wrapper div
+  if (pageName === "HomeTab") {
+    var homeWrapperElem = document.getElementById("homeWrapper");
+
+    if (homeWrapperElem.style.display === "none") {
+      // Display active CaseStudy
+      tabcontent = document.getElementsByClassName("case-study");
+      for (i = 0; i < tabcontent.length; i++) {
+        if (pageName !== tabcontent[i].id) hideElement(tabcontent[i], 100);
+      }
+
+      showElement(homeWrapperElem);
+    }
+  }
+
   window.scrollTo({
     top: 0,
     left: 0,
